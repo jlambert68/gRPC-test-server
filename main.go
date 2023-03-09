@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	uuidGenerator "github.com/google/uuid"
+	"github.com/sirupsen/logrus"
 	"log"
 	"os"
 	"strconv"
@@ -12,6 +13,11 @@ func main() {
 
 	// Set up logging
 	initLogger()
+
+	logger.WithFields(logrus.Fields{
+		"id":                     "a36a4003-3340-41dd-8b70-d9acf052f415",
+		"applicationRuntimeUuid": applicationRuntimeUuid,
+	}).Debug("ApplicationRuntimeUuid create for this instance")
 
 	// Stop gRPC-server before exiting
 	defer gRPCServerObject.StopGrpcServer()
