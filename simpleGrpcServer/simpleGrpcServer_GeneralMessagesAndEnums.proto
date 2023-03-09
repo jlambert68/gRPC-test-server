@@ -1,0 +1,20 @@
+syntax = "proto3";
+package simpleGrpcServer;
+option go_package = "./go_grpc_api";
+
+// ****************************************************************************************************
+// General messages and Enumerations
+
+// Ack/Nack- Response message with comment
+message AckNackResponse {
+  bool AckNack = 1; // True=Ack, False=Nack
+  string Comments = 2; //Comments if needed
+}
+
+// Parameter used for Empty inputs, only containing current proto-file version
+message EmptyParameter {
+  string MessageToGrpcServer = 1; // A message to the gRPC-server
+}
+
+
+

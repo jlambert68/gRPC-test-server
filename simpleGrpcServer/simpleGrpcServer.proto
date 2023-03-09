@@ -1,0 +1,21 @@
+syntax = "proto3";
+package simpleGrpcServer;
+option go_package = "./go_grpc_api";
+
+import "simpleGrpcServer/simpleGrpcServer_GeneralMessagesAndEnums.proto";
+
+// ****************************************************************************************************
+//
+
+service SimpleGrpcServerServices {
+
+  //Check if 'gRPC-server' is alive with this service
+  rpc AreYouAlive (EmptyParameter) returns (AckNackResponse) {
+  }
+
+}
+
+
+
+
+
